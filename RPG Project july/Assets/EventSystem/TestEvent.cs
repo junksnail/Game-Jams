@@ -4,19 +4,15 @@ using System.Collections.Generic;
 
 public class TestEvent : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        EventManager.instance.onEventActive += OnEventBecomeActive;
+        EventManager.instance.onEventActive += OnEventBecomeActive; // subscribe to event manager event
     }
 
-    private void OnEventBecomeActive()
+    private void OnEventBecomeActive() // to be called from another scrpt
     {
-        Debug.Log("Event Triggered");
+        Debug.Log("Event Triggered"); // to trigger when event is invoked
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

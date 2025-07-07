@@ -6,19 +6,23 @@ using UnityEngine.Events;
 
 public class EventManager : MonoBehaviour
 {
-    public static EventManager instance;
+    public static EventManager instance; // creates a singleton so the event manager is available from any script
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null) // checks to see if EventManager instance is already taken
+        {
+            instance = this; // if not taken, sets this as EM instance
+        }
     }
 
-    public event Action onEventActive;
-    public void EventActive()
+    public event Action onEventActive; // creates an Event
+
+    public void EventActive() //function to be called from another script
     {
-        if (onEventActive != null)
+        if (onEventActive != null) // ensures something is subscribed to this event before activating it
         {
-            onEventActive();
+            onEventActive(); // calls the event
         }
     }
     
