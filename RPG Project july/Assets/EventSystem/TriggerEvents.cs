@@ -5,11 +5,12 @@ using System.Collections.Generic;
 public class TriggerEvents : MonoBehaviour
 {
     public bool isOn = false;
+
     void Update()
     {
         if (isOn)
         {
-            EventManager.instance.EventActive();
+            EventManager.instance.EventActive(); // calls event from the event script
         }
     }
 
