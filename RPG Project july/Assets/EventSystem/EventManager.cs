@@ -8,7 +8,7 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager instance; // creates a singleton so the event manager is available from any script
 
-    private void Awake()
+    private void Awake() //on awake
     {
         if (instance == null) // checks to see if EventManager instance is already taken
         {
